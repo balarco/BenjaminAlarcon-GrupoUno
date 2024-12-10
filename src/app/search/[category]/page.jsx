@@ -1,5 +1,3 @@
-// src/app/search/[category]/page.jsx
-
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
@@ -7,7 +5,7 @@ import { getProducts, getProductByCategory } from "../../../data/asyncMock";
 import { useParams } from "next/navigation";
 import ProductGrid from "../../../components/layout/search/ProductGrid";
 import Categories from "../../../components/layout/search/Categories";
-import MobileCategories from "../../../components/layout/search/MobileCategories"; // Import
+import MobileCategories from "../../../components/layout/search/MobileCategories";
 import { notFound } from "next/navigation";
 
 const SearchCategoryPage = () => {
@@ -16,7 +14,6 @@ const SearchCategoryPage = () => {
     const { category } = useParams();
     const [isMobile, setIsMobile] = useState(false);
 
-    // Fetch all products initially
     const [allProducts, setAllProducts] = useState([]);
     useEffect(() => {
         const fetchAllProducts = async () => {
@@ -53,7 +50,6 @@ const SearchCategoryPage = () => {
         fetchProductsByCategory();
     }, [category, allProducts]);
 
-    // Calculate categories from all products
     const categories = useMemo(() => {
         const uniqueCategories = new Set(allProducts.map((product) => product.category));
         return ["All", ...uniqueCategories];
@@ -64,7 +60,7 @@ const SearchCategoryPage = () => {
             setIsMobile(window.innerWidth < 768); // Adjust breakpoint if needed
         };
 
-        handleResize(); // Check on initial load
+        handleResize();
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);

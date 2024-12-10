@@ -1,5 +1,3 @@
-// src/components/product/Product.jsx
-
 "use client";
 
 import Image from 'next/image';
@@ -42,7 +40,6 @@ const ProductItem = ({ id, height }) => {
         return description;
     };
 
-    // Function to format the price with dots as thousands separators
     const formatPrice = (price) => {
         return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     };
@@ -58,10 +55,10 @@ const ProductItem = ({ id, height }) => {
                         height={height}
                         className="w-full rounded-xl object-cover"
                     />
-                    <div className="absolute inset-x-0 bottom-0 flex flex-col items-start gap-1 bg-gradient-to-t from-gray-900 to-transparent p-4 rounded-b-2xl">
+                    <div className="pt-6 absolute inset-x-0 bottom-0 flex flex-col items-start gap-1 bg-gradient-to-t from-gray-900 to-transparent p-4 rounded-b-2xl">
                         <h2 className="text-base text-white">{product.title}</h2>
-                        <p className="text-sm text-white">{truncateDescription(product.description, 50)}</p>
-                        <h3 className="text-left text-white">$ {formatPrice(product.price)}</h3> {/* Format price here */}
+                        <p className="text-sm text-white">{truncateDescription(product.description, 75)}</p>
+                        <h3 className="text-left text-white">$ {formatPrice(product.price)}</h3>
                     </div>
                 </div>
             </Link>

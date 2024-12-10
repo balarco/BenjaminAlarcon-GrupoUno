@@ -1,9 +1,7 @@
-// src/components/layout/CartItem.jsx
-
-import { useStore } from '../../store/store';
+import { useStore } from '../../../store/store';
 import Image from 'next/image';
 import Link from 'next/link';
-import { MinusIcon, PlusIcon } from '@heroicons/react/24/solid'; // Import Heroicons
+import { MinusIcon, PlusIcon } from '@heroicons/react/24/solid';
 
 const CartItem = ({ item, onClose }) => {
     const { deleteProduct, updateProduct } = useStore();
@@ -24,6 +22,8 @@ const CartItem = ({ item, onClose }) => {
         return price.toLocaleString();
     };
 
+    const shouldShowType = item.stock.length > 1 || item.selectedType !== null;
+
     return (
         <div className="flex items-center py-4 border-b border-gray-700">
             <div className="w-16 h-16 mr-4 relative">
@@ -41,21 +41,22 @@ const CartItem = ({ item, onClose }) => {
                         {item.title}
                     </div>
                 </Link>
-                <p className="text-gray-400">{item.selectedType || 'Default'}</p>
+                {shouldShowType && (
+                    <p className="text-gray-400">{item.selectedType}</p>
+                )}
                 <div className="flex items-center mt-2">
                     <button
                         onClick={() => handleQuantityChange(item.quantity - 1)}
                         className="bg-gray-800 text-white p-1 rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400"
                     >
-                        <MinusIcon className="h-5 w-5" /> {/* Use MinusIcon */}
+                        <MinusIcon className="h-5 w-5" />
                     </button>
-                    {/* Fixed width for amount picker */}
                     <span className="mx-2 w-8 text-center">{item.quantity}</span>
                     <button
                         onClick={() => handleQuantityChange(item.quantity + 1)}
                         className="bg-gray-800 text-white p-1 rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400"
                     >
-                        <PlusIcon className="h-5 w-5" /> {/* Use PlusIcon */}
+                        <PlusIcon className="h-5 w-5" />
                     </button>
                     <span className="ml-4 text-lg font-semibold">
             ${formatPrice(item.price * item.quantity)}

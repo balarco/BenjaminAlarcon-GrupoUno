@@ -1,5 +1,3 @@
-// src/app/page.jsx
-
 import Landing from "../components/Landing";
 
 export default function Home() {

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useStore } from '../../../store/store.js';
 import Image from 'next/image';
-import CartSidebar from '../Cart';
+import CartSidebar from '../cart/Cart';
 import Search from './Search.jsx';
 
 const Header = () => {

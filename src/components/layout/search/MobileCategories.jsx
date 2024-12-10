@@ -1,5 +1,3 @@
-// src/components/layout/search/MobileCategories.jsx
-
 "use client";
 
 import { useState, useEffect, useRef } from "react"; // Import useRef
@@ -9,7 +7,7 @@ import Link from "next/link";
 const MobileCategories = ({ currentCategory }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [categories, setCategories] = useState([]);
-    const dropdownRef = useRef(null); // Create a ref for the dropdown
+    const dropdownRef = useRef(null);
 
     useEffect(() => {
         const fetchCategories = async () => {
@@ -29,7 +27,6 @@ const MobileCategories = ({ currentCategory }) => {
         setIsOpen(!isOpen);
     };
 
-    // Close dropdown when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -37,7 +34,6 @@ const MobileCategories = ({ currentCategory }) => {
             }
         };
 
-        // Only add listener when the dropdown is open
         if (isOpen) {
             document.addEventListener("mousedown", handleClickOutside);
         }
@@ -45,7 +41,7 @@ const MobileCategories = ({ currentCategory }) => {
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, [isOpen]); // Dependency array includes isOpen
+    }, [isOpen]);
 
     return (
         <div ref={dropdownRef} className="relative w-full mb-4"> {/* Attach ref to div */}

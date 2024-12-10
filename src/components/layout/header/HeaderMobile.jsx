@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useState, useEffect, Fragment } from 'react';
 import { useStore } from '../../../store/store.js';
 import Image from 'next/image';
-import CartSidebar from '../Cart';
+import CartSidebar from '../cart/Cart';
 import { Dialog, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Search from './Search.jsx';

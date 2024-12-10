@@ -1,5 +1,3 @@
-// src/components/layout/header/Search.jsx
-
 "use client";
 
 import { useState } from 'react';
@@ -27,7 +25,7 @@ const Search = () => {
             <form onSubmit={handleSearchSubmit}>
                 <input
                     type="text"
-                    placeholder="Search products..."
+                    placeholder="Buscar productos..."
                     value={searchTerm}
                     onChange={handleSearchChange}
                     className="w-full px-4 py-2 border rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"

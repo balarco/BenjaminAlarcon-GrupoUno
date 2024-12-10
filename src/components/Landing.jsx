@@ -1,5 +1,3 @@
-// src/components/Landing.jsx
-
 "use client";
 
 import BannerProduct from '../components/product/BannerProduct';
@@ -45,22 +43,19 @@ const Home = () => {
     const mainProduct = products.find(p => p.id === mainProductId);
     const sideProducts = sideProductIds.map(id => products.find(p => p.id === id));
 
-    const bannerHeight = 450; // Adjust this value as needed
-    const sideProductHeight = 250; // Adjust this value as needed
+    const bannerHeight = 450;
+    const sideProductHeight = 250;
 
-    // Function to format the price with dots as thousands separators
     const formatPrice = (price) => {
         return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     };
 
     return (
         <div className="container mx-auto mt-10">
-            {/* Banner Product Section */}
             <div className="w-full px-4 mb-8" >
                 <BannerProduct id={mainProductId} height={bannerHeight} />
             </div>
 
-            {/* Side Products Section */}
             <div className="flex flex-wrap justify-center">
                 {sideProducts.map((product) => (
                     <div key={product.id} className="w-full md:w-1/2 lg:w-1/4 px-4 mb-4">

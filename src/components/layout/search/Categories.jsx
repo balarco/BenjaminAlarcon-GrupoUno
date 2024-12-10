@@ -1,5 +1,3 @@
-// src/components/layout/search/Categories.jsx
-
 "use client";
 
 import Link from 'next/link';
@@ -25,12 +23,11 @@ const Categories = React.memo(({ currentCategory, closeMobileMenu }) => { // Rec
 
     return (
         <aside className="w-1/4 pr-8">
-            <h3 className="font-bold text-lg mb-4">Categories</h3>
+            <h3 className="font-bold text-lg mb-4">Categorias</h3>
             <ul>
                 {categories.map((category) => (
                     <li key={category} className="mb-2">
                         <Link href={category === 'All' ? '/search' : `/search/${category}`}>
-                            {/* Close menu on click */}
                             <div
                                 onClick={closeMobileMenu}
                                 className={`hover:text-amber-500 hover:underline cursor-pointer ${currentCategory === category ? 'text-amber-500' : ''}`}

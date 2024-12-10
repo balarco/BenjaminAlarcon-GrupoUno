@@ -1,5 +1,3 @@
-// src/app/search/page.jsx
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -36,7 +34,6 @@ const SearchPage = () => {
     return (
         <div className="flex flex-col min-h-screen">
             <main className="container mx-auto mt-10 flex flex-grow">
-                {/* No more categories prop needed */}
                 <Categories currentCategory={"All"} />
                 <div className="w-3/4">
                     <ProductGrid products={products} />

@@ -1,5 +1,3 @@
-// src/components/product/BannerProduct.jsx
-
 "use client";
 
 import Image from 'next/image';
@@ -34,7 +32,6 @@ const BannerProduct = ({ id }) => {
         return <div>Product not found.</div>;
     }
 
-    // Function to format the price with dots as thousands separators
     const formatPrice = (price) => {
         return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     };
@@ -42,12 +39,12 @@ const BannerProduct = ({ id }) => {
     return (
         <Link href={`/products/${id}`}>
             <div className="flex rounded-2xl overflow-hidden border-white border-2 cursor-pointer">
-                <div className="w-1/2 md:w-1/3"> {/* Adjust image width on larger screens */}
+                <div className="w-1/2 md:w-1/3">
                     <Image
                         src={product.img}
                         alt={product.alt}
                         width={500}
-                        height={300} // Fixed height
+                        height={300}
                         className="w-full h-full object-cover"
                     />
                 </div>

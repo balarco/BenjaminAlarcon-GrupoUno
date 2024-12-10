@@ -1,5 +1,3 @@
-// src/components/About.jsx
-
 const AboutContent = () => {
     return (
         <div className="bg-gray-800 rounded-lg shadow-md p-8">

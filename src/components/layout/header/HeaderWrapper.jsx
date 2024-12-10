@@ -1,5 +1,3 @@
-// src/components/layout/header/HeaderWrapper.jsx
-
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -11,11 +9,11 @@ const HeaderWrapper = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth < 768); // Adjust breakpoint as needed
+            setIsMobile(window.innerWidth < 768);
         };
 
         if (typeof window !== 'undefined'){
-            handleResize(); // Check on initial load
+            handleResize();
             window.addEventListener('resize', handleResize);
         }
         return () => {

@@ -5,10 +5,8 @@ import { useStore } from '../../store/store';
 import { PlusIcon, MinusIcon } from '@heroicons/react/24/solid';
 
 const ProductDetail = ({ product }) => {
-    // Determine if the product has multiple types
     const hasMultipleTypes = product.types.length > 1;
 
-    // Set selected type based on whether the product has multiple types
     const [selectedType, setSelectedType] = useState(hasMultipleTypes ? product.types[0] : null);
     const [amount, setAmount] = useState(1);
     const { addProduct, cart, updateProduct } = useStore();
@@ -18,13 +16,11 @@ const ProductDetail = ({ product }) => {
         setAmount(1);
     };
 
-    // Get the stock for the selected type or the single available type
     const getStockForSelectedType = () => {
         if (!product.stock) {
             return 0;
         }
         if (!hasMultipleTypes) {
-            // If there's only one type, return its quantity
             return product.stock[0].quantity;
         }
         const stockItem = product.stock.find(item => item.type === selectedType);
@@ -51,7 +47,7 @@ const ProductDetail = ({ product }) => {
                 ...product,
                 quantity: amount,
                 selectedType: selectedType,
-                stock: product.stock // Keep the stock as an array
+                stock: product.stock
             });
         }
     };

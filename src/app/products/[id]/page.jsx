@@ -1,5 +1,3 @@
-// src/app/products/[id]/page.jsx
-
 import { getProductById, getProducts } from '../../../data/asyncMock';
 import ProductDetail from '../../../components/product/ProductDetail';
 import { notFound } from 'next/navigation';
