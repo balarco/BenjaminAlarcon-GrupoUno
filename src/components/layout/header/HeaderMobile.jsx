@@ -1,5 +1,3 @@
-// src/components/layout/header/HeaderMobile.jsx
-
 "use client";
 
 import Link from 'next/link';
@@ -82,7 +80,6 @@ const HeaderMobile = () => {
                                         <div className="mb-4 w-full">
                                             <Search />
                                         </div>
-                                        {/* Pass closeMobileMenu to Categories */}
                                         <Categories currentCategory={""} closeMobileMenu={closeMobileMenu} />
                                     </div>
                                 </Dialog.Panel>
@@ -91,7 +88,6 @@ const HeaderMobile = () => {
                     </Transition>
                 </div>
 
-                {/* Logo */}
                 <div className="flex w-full items-center">
                     <div className="flex w-full md:w-1/3">
                         <Link
@@ -111,7 +107,6 @@ const HeaderMobile = () => {
                     </div>
                 </div>
 
-                {/* Shopping Cart */}
                 <div className="flex justify-end md:w-1/3">
                     <div className="relative cursor-pointer" onClick={toggleCart}
                          onMouseEnter={() => setIsCartHovered(true)}

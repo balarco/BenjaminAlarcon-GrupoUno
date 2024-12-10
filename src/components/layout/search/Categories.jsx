@@ -4,7 +4,7 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { getProducts } from '../../../data/asyncMock';
 
-const Categories = React.memo(({ currentCategory, closeMobileMenu }) => { // Receive closeMobileMenu
+const Categories = React.memo(({ currentCategory, closeMobileMenu }) => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
@@ -12,9 +12,9 @@ const Categories = React.memo(({ currentCategory, closeMobileMenu }) => { // Rec
             try {
                 const allProducts = await getProducts();
                 const uniqueCategories = new Set(allProducts.map(product => product.category));
-                setCategories(["All", ...uniqueCategories]);
+                setCategories(["Todo", ...uniqueCategories]);
             } catch (error) {
-                console.error("Error fetching categories:", error);
+                console.error("Error al buscar categorías:", error);
             }
         };
 
@@ -27,7 +27,7 @@ const Categories = React.memo(({ currentCategory, closeMobileMenu }) => { // Rec
             <ul>
                 {categories.map((category) => (
                     <li key={category} className="mb-2">
-                        <Link href={category === 'All' ? '/search' : `/search/${category}`}>
+                        <Link href={category === 'Todo' ? '/search' : `/search/${category}`}>
                             <div
                                 onClick={closeMobileMenu}
                                 className={`hover:text-amber-500 hover:underline cursor-pointer ${currentCategory === category ? 'text-amber-500' : ''}`}

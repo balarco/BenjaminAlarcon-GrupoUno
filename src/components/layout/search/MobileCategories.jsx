@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react"; // Import useRef
+import { useState, useEffect, useRef } from "react";
 import { getProducts } from "../../../data/asyncMock";
 import Link from "next/link";
 

@@ -1,5 +1,3 @@
-// src/components/layout/header/Header.jsx
-
 "use client";
 
 import Link from 'next/link';
@@ -30,8 +28,7 @@ const Header = () => {
         setIsCartOpen(!isCartOpen);
     };
 
-    // Breakpoint at which the title will be hidden (you can adjust this)
-    const hideTitleBreakpoint = 768; // md: breakpoint in Tailwind CSS
+    const hideTitleBreakpoint = 768;
 
     return (
         <header className="py-4 px-6 bg-gray-900 text-gray-300 shadow-md sticky z-50 w-full">
@@ -48,8 +45,6 @@ const Header = () => {
                             />
                         </div>
                     </Link>
-
-                    {/* Conditionally hide the title based on window width */}
                     {windowWidth >= hideTitleBreakpoint && (
                         <Link href="/">
                             <div className="cursor-pointer">
@@ -80,10 +75,8 @@ const Header = () => {
                     </nav>
                 </div>
 
-                {/* Search Bar (use the Search component) */}
                 <Search />
 
-                {/* Shopping Cart (Container) */}
                 <div className="flex justify-end items-center">
                     <div className="relative cursor-pointer" onClick={toggleCart}
                          onMouseEnter={() => setIsCartHovered(true)}

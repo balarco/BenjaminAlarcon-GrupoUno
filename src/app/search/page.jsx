@@ -34,7 +34,7 @@ const SearchPage = () => {
     return (
         <div className="flex flex-col min-h-screen">
             <main className="container mx-auto mt-10 flex flex-grow">
-                <Categories currentCategory={"All"} />
+                <Categories currentCategory={"Todo"} />
                 <div className="w-3/4">
                     <ProductGrid products={products} />
                 </div>

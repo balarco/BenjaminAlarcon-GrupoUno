@@ -48,7 +48,7 @@ const BannerProduct = ({ id }) => {
                         className="w-full h-full object-cover"
                     />
                 </div>
-                <div className="w-1/2 md:w-2/3 p-6 bg-gray-600 flex flex-col justify-center text-white"> {/* Adjust text width */}
+                <div className="w-1/2 md:w-2/3 p-6 bg-gray-600 flex flex-col justify-center text-white">
                     <h2 className="text-2xl font-bold mb-4">{product.title}</h2>
                     <p className="text-base mb-6">{product.description}</p>
                     <div className="bg-blue-950 text-white p-3 rounded-xl text-lg font-semibold">

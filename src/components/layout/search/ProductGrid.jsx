@@ -19,11 +19,11 @@ const ProductGrid = React.memo(({ products }) => {
 
     const getColumnCount = () => {
         if (windowWidth >= 1024) {
-            return 3; // 3 columns for large screens (lg breakpoint and above)
+            return 3;
         } else if (windowWidth >= 768) {
-            return 2; // 2 columns for medium screens (md breakpoint)
+            return 2;
         } else {
-            return 1; // 1 column for small screens
+            return 1;
         }
     };
 

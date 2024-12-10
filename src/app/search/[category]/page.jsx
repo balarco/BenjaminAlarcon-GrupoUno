@@ -31,7 +31,6 @@ const SearchCategoryPage = () => {
     useEffect(() => {
         const fetchProductsByCategory = async () => {
             try {
-                // Check for valid category only AFTER allProducts is fetched
                 if (
                     allProducts.length > 0 &&
                     !allProducts.some((p) => p.category === category)
@@ -52,12 +51,12 @@ const SearchCategoryPage = () => {
 
     const categories = useMemo(() => {
         const uniqueCategories = new Set(allProducts.map((product) => product.category));
-        return ["All", ...uniqueCategories];
+        return ["Todo", ...uniqueCategories];
     }, [allProducts]);
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth < 768); // Adjust breakpoint if needed
+            setIsMobile(window.innerWidth < 768);
         };
 
         handleResize();

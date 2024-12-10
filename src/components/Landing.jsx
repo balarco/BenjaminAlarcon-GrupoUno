@@ -71,7 +71,7 @@ const Home = () => {
                                 />
                                 <div className="absolute inset-x-0 bottom-0 flex flex-col items-start gap-1 bg-gradient-to-t from-gray-900 to-transparent p-4 rounded-b-2xl">
                                     <h2 className="text-base text-white">{product.title}</h2>
-                                    <h3 className="text-left text-white">$ {formatPrice(product.price)}</h3> {/* Format price here */}
+                                    <h3 className="text-left text-white">$ {formatPrice(product.price)}</h3>
                                 </div>
                             </div>
                         </Link>

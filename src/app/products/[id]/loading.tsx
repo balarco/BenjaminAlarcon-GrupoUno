@@ -1,5 +1,3 @@
-// src/app/products/[id]/loading.jsx
-
 export default function Loading() {
     return (
         <div className="container mx-auto mt-10 px-4">
@@ -20,7 +18,6 @@ export default function Loading() {
             <div className="mt-12">
                 <h2 className="text-2xl font-bold mb-4 text-center">Explore More</h2>
                 <div className="flex flex-wrap justify-center">
-                    {/* Placeholder for 4 more products */}
                     <div className="animate-pulse w-full md:w-1/2 lg:w-1/4 px-4 mb-4">
                         <div className="h-80 bg-gray-300 rounded-2xl"></div>
                     </div>
